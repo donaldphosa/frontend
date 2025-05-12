@@ -8,6 +8,8 @@ import { useThemeStore } from "./store/useThemeStore";
 
 import { Toaster } from "react-hot-toast";
 import Dashboard from "./pages/Dashboard";
+import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
 
 function App() {
   const { theme } = useThemeStore();
@@ -17,7 +19,9 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

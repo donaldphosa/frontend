@@ -1,5 +1,7 @@
 import { PhoneIcon, MailIcon, Package2Icon, PlusCircleIcon } from "lucide-react";
 import { useEmployeeStore } from "../store/useEmployeeStore";
+import { handleInputValidation } from "../handleInput/handleInput";
+
 
 function AddEmployeeModal() {
   const { addEmployee, formData, setFormData, loading } = useEmployeeStore();
@@ -31,7 +33,9 @@ function AddEmployeeModal() {
                   placeholder="Enter Employee name"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, name: e.target.value })}}
                 />
               </div>
             </div>
@@ -48,7 +52,9 @@ function AddEmployeeModal() {
                   placeholder="Enter Employee surname"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.surname}
-                  onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, surname: e.target.value })}}
                 />
               </div>
             </div>
@@ -63,11 +69,13 @@ function AddEmployeeModal() {
                   <PhoneIcon className="size-5" />
                 </div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="082 123 4567"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, phone: e.target.value })}}
                 />
               </div>
             </div>
@@ -86,7 +94,9 @@ function AddEmployeeModal() {
                   placeholder="employee@example.com"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, email: e.target.value })}}
                 />
               </div>
             </div>

@@ -1,39 +1,8 @@
-<h1 align="center">✨ PERN Stack Tutorial ✨</h1>
+# React + Vite
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Highlights:
+Currently, two official plugins are available:
 
-- 🌟 Tech stack: PERN + TailwindCSS + Daisy UI
-- 🚀 Rate Limiting & Bot Detection
-- 👌 Global state management with Zustand
-- 🐞 Error handling both on the server and client
-- ⭐ Deployment for FREE!
-- ⏳ And much more!
-
-### Setup .env file
-
-```js
-PORT=3000
-
-PGUSER=...
-PGPASSWORD=...
-PGHOST=...
-PGDATABASE=...
-
-ARCJET_KEY=...
-ARCJET_ENV=development
-```
-
-### Run the API
-
-```shell
-npm run dev
-```
-
-### Run the frontend
-
-```shell
-cd frontend
-npm run dev
-```
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

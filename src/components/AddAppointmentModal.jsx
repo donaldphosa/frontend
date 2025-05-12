@@ -1,5 +1,7 @@
 import { UserCircle, CalendarCheck, Package2Icon, PlusCircleIcon } from "lucide-react";
 import { useAppointmentStore } from "../store/useAppointmentStore";
+import { handleInputValidation } from "../handleInput/handleInput";
+
 
 function AddAppointmentModal() {
   const { addAppointment, formData, setFormData, loading } = useAppointmentStore();
@@ -29,7 +31,9 @@ function AddAppointmentModal() {
                   placeholder="John"
                   className="input input-bordered w-full pl-10 py-3"
                   value={formData.employeeName}
-                  onChange={(e) => setFormData({ ...formData, employeeName: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, employeeName: e.target.value })}}
                 />
               </div>
             </div>
@@ -44,7 +48,9 @@ function AddAppointmentModal() {
                 placeholder="Doe"
                 className="input input-bordered w-full py-3"
                 value={formData.employeeSurname}
-                onChange={(e) => setFormData({ ...formData, employeeSurname: e.target.value })}
+                onChange={(e) => {
+                  handleInputValidation(e)
+                  setFormData({ ...formData, employeeSurname: e.target.value })}}
               />
             </div>
 
@@ -62,7 +68,9 @@ function AddAppointmentModal() {
                   placeholder="Jane"
                   className="input input-bordered w-full pl-10 py-3"
                   value={formData.customerName}
-                  onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, customerName: e.target.value })}}
                 />
               </div>
             </div>
@@ -77,7 +85,9 @@ function AddAppointmentModal() {
                 placeholder="Smith"
                 className="input input-bordered w-full py-3"
                 value={formData.customerSurname}
-                onChange={(e) => setFormData({ ...formData, customerSurname: e.target.value })}
+                onChange={(e) => {
+                  handleInputValidation(e)
+                  setFormData({ ...formData, customerSurname: e.target.value })}}
               />
             </div>
 
@@ -95,7 +105,9 @@ function AddAppointmentModal() {
                   placeholder="In-store / Home visit"
                   className="input input-bordered w-full pl-10 py-3"
                   value={formData.appointmentType}
-                  onChange={(e) => setFormData({ ...formData, appointmentType: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, appointmentType: e.target.value })}}
                 />
               </div>
             </div>
@@ -110,11 +122,13 @@ function AddAppointmentModal() {
                   <span className="text-base-content/50">R</span>
                 </div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="100.00"
                   className="input input-bordered w-full pl-10 py-3"
                   value={formData.price}
-                  onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, price: e.target.value })}}
                 />
               </div>
             </div>
@@ -133,7 +147,9 @@ function AddAppointmentModal() {
                   className="input input-bordered w-full pl-10 py-3"
                   placeholder="01/01/2000"
                   value={formData.appointmentDate}
-                  onChange={(e) => setFormData({ ...formData, appointmentDate: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, appointmentDate: e.target.value })}}
                 />
               </div>
             </div>

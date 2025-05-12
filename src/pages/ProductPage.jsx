@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useProductStore } from "../store/useProductStore";
 import { useEffect } from "react";
 import { ArrowLeftIcon, SaveIcon, Trash2Icon } from "lucide-react";
+import { handleInputValidation } from "../handleInput/handleInput";
 
 function ProductPage() {
   const {
@@ -84,7 +85,9 @@ function ProductPage() {
                   placeholder="Enter product name"
                   className="input input-bordered w-full"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>{ 
+                    handleInputValidation(e)
+                    setFormData({ ...formData, name: e.target.value })}}
                 />
               </div>
 
@@ -100,7 +103,9 @@ function ProductPage() {
                   placeholder="0.00"
                   className="input input-bordered w-full"
                   value={formData.price}
-                  onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, price: e.target.value })}}
                 />
               </div>
 
@@ -114,7 +119,9 @@ function ProductPage() {
                   placeholder="https://example.com/image.jpg"
                   className="input input-bordered w-full"
                   value={formData.image}
-                  onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, image: e.target.value })}}
                 />
               </div>
 

@@ -4,6 +4,8 @@ import {
     PlusCircleIcon,
   } from "lucide-react";
   import { useAppointmentStore } from "../store/useAppointmentStore";
+  import { handleInputValidation } from "../handleInput/handleInput";
+
   
   function UpdateAppointmentModal() {
     const {
@@ -45,7 +47,9 @@ import {
                 label="Employee Name"
                 icon={<UserIcon className="size-5" />}
                 value={formData.employeeName}
-                onChange={(val) => setFormData({ ...formData, employeeName: val })}
+                onChange={(val) => {
+                  handleInputValidation(e)
+                  setFormData({ ...formData, employeeName: val })}}
                 placeholder="Enter employee name"
               />
   
@@ -53,7 +57,9 @@ import {
               <InputField
                 label="Employee Surname"
                 value={formData.employeeSurname}
-                onChange={(val) => setFormData({ ...formData, employeeSurname: val })}
+                onChange={(val) => {
+                  handleInputValidation(e)
+                  setFormData({ ...formData, employeeSurname: val })}}
                 placeholder="Enter employee surname"
               />
   
@@ -61,7 +67,9 @@ import {
               <InputField
                 label="Customer Name"
                 value={formData.customerName}
-                onChange={(val) => setFormData({ ...formData, customerName: val })}
+                onChange={(val) => {
+                  handleInputValidation(e)
+                  setFormData({ ...formData, customerName: val })}}
                 placeholder="Enter customer name"
               />
   
@@ -69,7 +77,9 @@ import {
               <InputField
                 label="Customer Surname"
                 value={formData.customerSurname}
-                onChange={(val) => setFormData({ ...formData, customerSurname: val })}
+                onChange={(val) => {
+                  handleInputValidation(e)
+                  setFormData({ ...formData, customerSurname: val })}}
                 placeholder="Enter customer surname"
               />
   
@@ -77,7 +87,10 @@ import {
               <InputField
                 label="Appointment Type"
                 value={formData.appointmentType}
-                onChange={(val) => setFormData({ ...formData, appointmentType: val })}
+                onChange={(val) => {
+                  handleInputValidation(e)
+                  
+                  setFormData({ ...formData, appointmentType: val })}}
                 placeholder="Consultation / Checkup"
               />
   
@@ -86,7 +99,9 @@ import {
                 label="Price"
                 type="number"
                 value={formData.price}
-                onChange={(val) => setFormData({ ...formData, price: val })}
+                onChange={(val) => {
+                  handleInputValidation(e)
+                  setFormData({ ...formData, price: val })}}
                 placeholder="Enter appointment price"
               />
   
@@ -96,8 +111,10 @@ import {
                 type="datetime-local"
                 icon={<CalendarIcon className="size-5" />}
                 value={formData.appointmentDate}
-                onChange={(val) =>
+                onChange={(val) =>{
+                  handleInputValidation(e)
                   setFormData({ ...formData, appointmentDate: val })
+                }
                 }
               />
             </div>

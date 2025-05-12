@@ -1,5 +1,7 @@
 import { DollarSignIcon, ImageIcon, Package2Icon, PlusCircleIcon } from "lucide-react";
 import { useProductStore } from "../store/useProductStore";
+import { handleInputValidation } from "../handleInput/handleInput";
+
 
 function AddProductModal() {
   const { addProduct, formData, setFormData, loading } = useProductStore();
@@ -31,7 +33,9 @@ function AddProductModal() {
                   placeholder="Enter product name"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, name: e.target.value })}}
                 />
               </div>
             </div>
@@ -52,7 +56,9 @@ function AddProductModal() {
                   placeholder="0.00"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.price}
-                  onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, price: e.target.value })}}
                 />
               </div>
             </div>
@@ -71,7 +77,9 @@ function AddProductModal() {
                   placeholder="https://example.com/image.jpg"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.image}
-                  onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                  onChange={(e) => {
+                    handleInputValidation(e)
+                    setFormData({ ...formData, image: e.target.value })}}
                 />
               </div>
             </div>

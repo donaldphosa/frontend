@@ -5,7 +5,8 @@ function EmployeeCard({ employee, onUpdate, onDelete }) {
   const navigate = useNavigate()
   return (
     <div className="card bg-base-100 p-4 space-y-2 m-10">
-      <h2 className="text-xl font-semibold">{employee.name}</h2>
+      <p className="text-gray-500">Name: {employee.name}</p>
+      <p className="text-gray-500">Surname: {employee.surname}</p>
       <p className="text-gray-500">Email: {employee.email}</p>
       <p className="text-gray-500">Phone: {employee.phone}</p>
 
